@@ -54,6 +54,28 @@ class Post extends BaseController
 
     }
 
+    public function edit($id)
+    {
+        $data['namaSistem'] = 'VRINSTA';
+        $Post = new PostModel();
+        $data['data'] = $Post->where('id', $id)->first();
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+                                    'id' => 'required'
+                                ]);
+        $isDataValid = $validation->withRequest($this->request)->run();
+        if($isDataValid)
+        {
+            $Post->update($id, [
+                'post' => $this->request->getPost('post'),
+            ]);
+            return redirect()->to(base_url('/post')); 
+
+            
+        }
+        echo view('post/edit', $data);
+    }    
+
     public function delete($id){
         $Post = new PostModel();
             //cari gambar by id

@@ -75,8 +75,8 @@
 
                                                                                                                                             
 
-                                                                    <a href="post/det/<?php echo $row['id']; ?>"
-                                                                    class="btn btn-small text-warning" data-toggle="tooltip" title="Buka Data"><i class="fas fa-folder-open"></i> </a>
+                                                                    <a href="post/edit/<?php echo $row['id']; ?>"
+                                                                    class="btn btn-small text-warning" data-toggle="tooltip" title="Edit"><i class="fas fa-folder-open"></i> </a>
 
                                                                     <a href="#" data-href="<?= base_url('Post/delete/'.$row['id'].'') ?>" onclick="confirmToDelete(this)"
                                                                     class="btn btn-small text-danger"><i class="fas fa-trash"></i> </a>

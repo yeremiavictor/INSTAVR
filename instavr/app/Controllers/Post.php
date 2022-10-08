@@ -16,8 +16,8 @@ class Post extends BaseController
     public function add()
     {
         $data['namaSistem'] = 'VRINSTA';
-        $validtaion = \Config\Services::validation();
-        $validation->setRules(['foto' => 'required']);
+        $validation =  \Config\Services::validation();
+        $validation->setRules(['post' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
 
         if($isDataValid){
@@ -41,7 +41,7 @@ class Post extends BaseController
             $Post->insert([
                 'id'=>$this->request->getPost('id'),
                 'post'=>$this->request->getPost('post'),
-                'foto'=>$this->request->getPost('foto'),
+                // 'foto'=>$this->request->getPost('foto'),
                 'foto'=>$namafoto,
                 'comment'=>$this->request->getPost('comment'),
                 'like'=>$this->request->getPost('like'),

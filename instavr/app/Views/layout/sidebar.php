@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?=base_url('')?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>VRINSTA</span></a>
             </li>
@@ -51,7 +51,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?=base_url('/post')?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Post</span></a>
             </li>

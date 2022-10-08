@@ -21,3 +21,21 @@
 
     <!-- Page level custom scripts -->
     <script src=<?= base_url("js/demo/datatables-demo.js") ?> ></script>
+
+     <!-- Buat Preview gambar foto -->
+        <script>
+        function readURL(input, id) {
+            id = id || '#blah';
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+        
+                reader.onload = function (e) {
+                    $(id)
+                            .attr('src', e.target.result)
+                            .height(150);
+                };
+        
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        </script> 

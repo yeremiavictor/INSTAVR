@@ -53,4 +53,18 @@ class Post extends BaseController
 
 
     }
+
+    public function delete($id){
+        $Post = new PostModel();
+            //cari gambar by id
+                $foto = $Post->find($id);
+                //cek jika gambar adalah default
+                if ($foto['foto'] != null){
+                    //hapus gambar
+                    unlink('img/'. $foto['foto']);
+                }
+            //
+        $Post->delete($id);
+        return redirect()->to(base_url('/Post')); 
+    }
 }

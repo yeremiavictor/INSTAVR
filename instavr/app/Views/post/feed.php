@@ -41,6 +41,7 @@
                                                     ?>
                                                     <input id="id" name="id" type="text" value="<?=$data['id'];?>"  /hidden>
                                                     <input id="like" name="like" type="text" value="<?=$tekan;?>"  /hidden>
+                                                    <input id="comment" name="comment" type="text" value="<?=$data['comment'];?>"  /hidden>
 
                                                 <!-- Hidden -->
 
@@ -60,13 +61,14 @@
                                             <form action="" method="post" id="text-editor"  name="ajax_form" id="ajax_form" class="user" enctype="multipart/form-data">
                                                 <!-- Hidden -->
                                                     <input id="id" name="id" type="text" value="<?=$data['id'];?>"  /hidden>
+                                                    <input id="like" name="like" type="text" value="<?=$data['like'];?>"  /hidden>
         
                                                 <!-- Hidden -->
         
         
                                                 <div class="form-group row">
                                                     <div class="col-6">
-                                                        <input id="post" name="post" type="text"  class="form-control" plcaholder="Comment" required="required">
+                                                        <input id="comment" name="comment" type="text"  class="form-control" placeholder="Comment" required="required">
                                                     </div>
                                                     <div class="col-6">
                                                         <button name="submit" type="submit" class="btn btn-primary" value="Save">Commentt</button> 

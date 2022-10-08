@@ -76,6 +76,30 @@ class Post extends BaseController
         echo view('post/edit', $data);
     }    
 
+    public function feed($id)
+    {
+        $data['namaSistem'] = 'VRINSTA';
+        $Post = new PostModel();
+        $data['data'] = $Post->where('id', $id)->first();
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+                                    'id' => 'required'
+                                ]);
+        $isDataValid = $validation->withRequest($this->request)->run();
+        if($isDataValid)
+        {
+            $Post->update($id, [
+                'like' => $this->request->getPost('like'),
+                'comment' => $this->request->getPost('comment'),
+            ]);
+            return redirect()->to(base_url('/')); 
+
+            
+        }
+        echo view('post/feed', $data);
+    }    
+
+
     public function delete($id){
         $Post = new PostModel();
             //cari gambar by id
